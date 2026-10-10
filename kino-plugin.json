@@ -1,7 +1,7 @@
 {
   "id": "pelispanda",
   "name": "Pelispanda",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "apiVersion": 6,
   "entry": "plugin.js",
   "icon": "icon.png",
@@ -9,13 +9,21 @@
   "author": "Basketboy23",
   "hosts": [
     "pelispanda.org",
+    "*.pelispanda.org",
     "vimeos.net",
+    "*.vimeos.net",
     "voe.sx",
+    "*.voe.sx",
     "doodstream.com",
+    "*.doodstream.com",
     "goodstream.one",
+    "*.goodstream.one",
     "hlswish.com",
+    "*.hlswish.com",
     "filemoon.sx",
-    "videoapp.zip"
+    "*.filemoon.sx",
+    "videoapp.zip",
+    "*.videoapp.zip"
   ],
   "capabilities": ["search", "home", "browse", "episodes", "resolve"],
   "streamHosts": "any",
@@ -24,3 +32,4 @@
   "categories": ["movies", "series", "anime"],
   "debug": false
 }
+
