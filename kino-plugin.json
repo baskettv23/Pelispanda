@@ -1,0 +1,26 @@
+{
+  "id": "pelispanda",
+  "name": "Pelispanda",
+  "version": "1.0.0",
+  "apiVersion": 6,
+  "entry": "plugin.js",
+  "icon": "icon.png",
+  "description": "Películas, series y animes de pelispanda.org en HD, con reproducción en línea (Latino/Castellano).",
+  "author": "Basketboy23",
+  "hosts": [
+    "pelispanda.org",
+    "vimeos.net",
+    "voe.sx",
+    "doodstream.com",
+    "goodstream.one",
+    "hlswish.com",
+    "filemoon.sx",
+    "videoapp.zip"
+  ],
+  "capabilities": ["search", "home", "browse", "episodes", "resolve"],
+  "streamHosts": "any",
+  "browser": true,
+  "color": "#E50914",
+  "categories": ["movies", "series", "anime"],
+  "debug": false
+}
