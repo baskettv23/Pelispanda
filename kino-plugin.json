@@ -1,7 +1,7 @@
 {
   "id": "pelispanda",
   "name": "Pelispanda",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "apiVersion": 6,
   "entry": "plugin.js",
   "icon": "icon.png",
@@ -30,6 +30,12 @@
   "browser": true,
   "color": "#E50914",
   "categories": ["movies", "series", "anime"],
+  "theme": {
+    "accent": "#2563EB",
+    "onAccent": "#FFFFFF",
+    "background": "#0D0F14",
+    "surface": "#171B24",
+    "highlight": "#FFC24B"
+  },
   "debug": false
 }
-

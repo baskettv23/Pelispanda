@@ -91,6 +91,8 @@ function absImg(u) {
   s = s.replace(/^http:\/\//i, "https://");
   // el sitio a veces devuelve ".../t/p/w300//poster.jpg"
   s = s.replace(/(\/t\/p\/[^\/]+)\/\//, "$1/");
+  // posters mas nitidos
+  s = s.replace(/\/t\/p\/w\d+\//, "/t/p/w500/");
   return s;
 }
 
@@ -201,14 +203,22 @@ export async function search(query) {
 export async function home() {
   const rows = [
     { id: "peli-destacadas", title: "Destacadas", path: "slider", key: "slider", params: {}, ref: "browse:released", genre: "peliculas" },
-    { id: "peli-peliculas", title: "Pel\u00edculas", path: "movies", key: "movies", params: { posts_per_page: 24, page: 1 }, ref: "browse:movies", genre: "peliculas" },
-    { id: "peli-series", title: "Series", path: "series", key: "series", params: { posts_per_page: 24, page: 1 }, ref: "browse:series", genre: "series" },
-    { id: "peli-animes", title: "Animes", path: "animes", key: "animes", params: { posts_per_page: 24, page: 1 }, ref: "browse:animes", genre: "anime" },
+    { id: "peli-peliculas", title: "Pel\u00edculas", path: "movies", key: "movies", params: { posts_per_page: 20, page: 1 }, ref: "browse:movies", genre: "peliculas" },
+    { id: "peli-series", title: "Series", path: "series", key: "series", params: { posts_per_page: 20, page: 1 }, ref: "browse:series", genre: "series" },
+    { id: "peli-animes", title: "Animes", path: "animes", key: "animes", params: { posts_per_page: 20, page: 1 }, ref: "browse:animes", genre: "anime" },
     { id: "peli-estrenos", title: "Estrenos", path: "released", key: "movies", params: {}, ref: "browse:released", genre: "peliculas" },
-    { id: "peli-accion", title: "Acci\u00f3n", path: "category", key: "results", params: { category: genreName("accion"), posts_per_page: 24, page: 1 }, ref: "cat:accion", genre: "peliculas" },
-    { id: "peli-terror", title: "Terror", path: "category", key: "results", params: { category: genreName("terror"), posts_per_page: 24, page: 1 }, ref: "cat:terror", genre: "peliculas" },
-    { id: "peli-comedia", title: "Comedia", path: "category", key: "results", params: { category: genreName("comedia"), posts_per_page: 24, page: 1 }, ref: "cat:comedia", genre: "peliculas" },
-    { id: "peli-latino", title: "Latino", path: "language", key: "results", params: { language: langTerm("latino"), posts_per_page: 24, page: 1 }, ref: "lang:latino", genre: "peliculas" }
+    { id: "peli-accion", title: "Acci\u00f3n", path: "category", key: "results", params: { category: genreName("accion"), posts_per_page: 20, page: 1 }, ref: "cat:accion", genre: "peliculas" },
+    { id: "peli-terror", title: "Terror", path: "category", key: "results", params: { category: genreName("terror"), posts_per_page: 20, page: 1 }, ref: "cat:terror", genre: "peliculas" },
+    { id: "peli-comedia", title: "Comedia", path: "category", key: "results", params: { category: genreName("comedia"), posts_per_page: 20, page: 1 }, ref: "cat:comedia", genre: "peliculas" },
+    { id: "peli-drama", title: "Drama", path: "category", key: "results", params: { category: genreName("drama"), posts_per_page: 20, page: 1 }, ref: "cat:drama", genre: "peliculas" },
+    { id: "peli-animacion", title: "Animaci\u00f3n", path: "category", key: "results", params: { category: genreName("animacion"), posts_per_page: 20, page: 1 }, ref: "cat:animacion", genre: "peliculas" },
+    { id: "peli-aventura", title: "Aventura", path: "category", key: "results", params: { category: genreName("aventura"), posts_per_page: 20, page: 1 }, ref: "cat:aventura", genre: "peliculas" },
+    { id: "peli-romance", title: "Romance", path: "category", key: "results", params: { category: genreName("romance"), posts_per_page: 20, page: 1 }, ref: "cat:romance", genre: "peliculas" },
+    { id: "peli-suspenso", title: "Suspense", path: "category", key: "results", params: { category: genreName("suspenso"), posts_per_page: 20, page: 1 }, ref: "cat:suspenso", genre: "peliculas" },
+    { id: "peli-cienciaficcion", title: "Ciencia ficci\u00f3n", path: "category", key: "results", params: { category: genreName("cienciaficcion"), posts_per_page: 20, page: 1 }, ref: "cat:cienciaficcion", genre: "peliculas" },
+    { id: "peli-latino", title: "Latino", path: "language", key: "results", params: { language: langTerm("latino"), posts_per_page: 20, page: 1 }, ref: "lang:latino", genre: "peliculas" },
+    { id: "peli-castellano", title: "Castellano", path: "language", key: "results", params: { language: langTerm("castellano"), posts_per_page: 20, page: 1 }, ref: "lang:castellano", genre: "peliculas" },
+    { id: "peli-subtitulado", title: "Subtitulado", path: "language", key: "results", params: { language: langTerm("subtitulado"), posts_per_page: 20, page: 1 }, ref: "lang:subtitulado", genre: "peliculas" }
   ];
   const data = await Promise.all(
     rows.map(function (r) {
